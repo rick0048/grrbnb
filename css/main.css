@@ -1,32 +1,273 @@
 @import url('some google sans-serif font');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 *::after,
-*::before{
+*::before {
     box-sizing: inherit;
 }
-html{
+
+html {
     font-size: 20px;
     line-height: 1.5;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
-main{
-    width: 90%;
-    margin: 0 auto;
-    border: 1px solid #aaa;
+
+header {
+    background-image: url("../img/background-doggo.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10rem;
+    color: darkred;
+    text-shadow: 1px 1px 1px black;
+    text-align: right;
+
 }
 
-input#min.price::after{
-    content: "$" attr(data-price);
-    display: block;
-    margin-top: -1.5rem;
+input {
+    width: 100%;
 }
-input.price#max::after{
-    content: "$" attr(data-price);
+
+header h1 {
+    padding-right: 0.5rem;
+}
+
+img {
+    padding: 1rem;
+    height: 20%;
+    width: 20%;
+    float: left;
+}
+
+main {
+    margin: 0 auto;
+    border: 1px solid #aaa;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    color: darkred;
+}
+
+.place {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#city {
+    display: flex;
+    height: ;
+    width: 96%;
+    padding-left: 0.75%;
+    font-size: 0.75rem;
+}
+
+.check-in {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#check-in {
+    display: flex;
+    width: 96%;
+    padding-left: 0.75%;
+    font-size: 0.75rem;
+}
+
+.check-out {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#check-out {
+    display: flex;
+    width: 96%;
+    padding-left: 0.75%;
+    font-size: 0.75rem;
+}
+
+.min-price {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#min {
+    display: flex;
+    width: 96%;
+}
+
+.max-price {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#max {
+    display: flex;
+    width: 96%;
+}
+
+.dogs {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#num-dogs {
+    display: flex;
+    padding-left: 0.75%;
+    width: 96%;
+    font-size: 0.75rem;
+}
+
+.search-btn {
+    display: flex;
+    border: 1px solid black;
+    height: 1.5rem;
+    width: 3rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding-left: 0.5rem;
+    background-color: darkred;
+    color: white;
+}
+
+input#min.price::after {
+    content: "$"attr(data-price);
     display: block;
-    margin-top: -1.5rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.60rem;
+
+}
+
+input.price#max::after {
+    content: "$"attr(data-price);
+    display: block;
+    margin-top: -0.50rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.6rem;
+}
+
+@media (min-width: 600px) and (max-width: 999px) {
+    img {
+        height: 20%;
+        width: 20%;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "head head"
+            "place place"
+            "checkin checkout"
+            "minprice maxprice"
+            "dogs dogs"
+            "search search";
+    }
+
+    header {
+        color: darkred;
+
+    }
+
+    .place {
+        grid-area: place;
+    }
+
+    .check-in {
+        grid-area: checkin;
+    }
+
+    #check-in {}
+
+    .check-out {
+        grid-area: checkout;
+    }
+
+    #check-out {}
+
+    .min-price {
+        grid-area: minprice;
+    }
+
+    .max-price {
+        grid-area: maxprice;
+    }
+
+    .dogs {
+        grid-area: dogs;
+    }
+
+    .search {
+        grid-area: search;
+    }
+
+
+}
+
+@media (min-width: 1000px) {
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    img {
+        padding: 1rem;
+        height: 20%;
+        width: 25%;
+        float: left;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        height: 22rem;
+    }
+
+    main form {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+    }
+
+    form {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .place {
+        width: 100%;
+    }
+
+    .check-in {
+        width: 48%;
+    }
+
+    .check-out {
+        width: 48%;
+    }
+
+    .min-price {
+        width: 48%;
+    }
+
+    .max-price {
+        width: 48%;
+    }
+
+    .dogs {
+        width: 100%;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+
 }
